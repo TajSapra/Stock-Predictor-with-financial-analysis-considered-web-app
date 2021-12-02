@@ -1,0 +1,47 @@
+body {
+    min-height: 100vh;    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    background: linear-gradient(to right top, rgb(50,25,46), rgb(14,29,49));
+}
+header img{
+    width: 8%;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(24,34,74);
+}
+#reviews_list{
+    color: white;
+    height: 39vh;
+    width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    top:61%;
+    font-size: 1.1rem;
+}
+::-webkit-scrollbar {
+    border-radius: 50px;
+    width: 10px;
+    height: 98%;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(to right top, rgb(50,25,46), rgb(14,29,49));
+    border-radius: 25px;
+    height: 98%;
+    cursor: pointer;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  body{
+    overflow: hidden;
+}

@@ -1,0 +1,22 @@
+#Data{
+    display: none;
+}
+body {
+    min-height: 100vh;    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    background: black
+}
+header img{
+    width: 8%;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(24,34,74);
+}
+body{
+    overflow: scroll;
+    overflow-x: hidden;
+}

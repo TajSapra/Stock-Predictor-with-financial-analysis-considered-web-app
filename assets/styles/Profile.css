@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    background:linear-gradient(to right top, rgb(50,25,46), rgb(14,29,49));
+}
+main {
+    min-height: 83vh;
+    background: linear-gradient(to right top, rgb(50,25,46), rgb(14,29,49));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    overflow: hidden;
+}
+#view_full_prices{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 39%;
+    width: 100%;
+    align-items: center;
+    height: 11%;
+    font-size: 1.5rem;
+    background-color: green;
+    border-radius: 1.5rem;
+}
+#view_full_prices2{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 43%;
+    width: 100%;
+    align-items: center;
+    height: 11%;
+    font-size: 1.5rem;
+    background-color: orange;
+    border-radius: 1.5rem;
+}
+.glass{
+    min-height: 80vh;
+    position: absolute;
+    top:16%;
+
+    z-index: 1;
+    width: 60%;
+    background:linear-gradient(to right bottom, rgba(81,59,85,0.8), rgba(81,59,85,0.5));
+    border-radius: 2rem;
+}
+.circle1, .circle2{
+    background:linear-gradient(to right bottom, rgba(100,73,103,0.9), rgba(100,73,103,1));
+    border-radius: 50%;
+    height: 9rem;
+    width: 9rem;
+    position: absolute;
+}
+.circle1{
+    top: 13%;
+    left: 74%;
+}
+.circle2{
+    left: 16%;
+    top: 80%;
+}
+header img{
+    width: 8%;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(24,34,74);
+}

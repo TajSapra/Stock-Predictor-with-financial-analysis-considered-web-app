@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/options.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <title><%=title%></title>
+</head>
+<body>
+    <header>
+        <img src="/media/logos/only_logog.jpg">
+        <span style="color: white;">
+            <p style="font-size: 2.5rem;">Stockado</p>
+            <p style="font-size: 1.25rem;">Dont Just Invest, Stockado it.</p>
+        </span>
+    </header>
+    <a href="/">
+        <i class="fas fa-home" style="color: white;font-size: 2rem;position: absolute;top: 20%;left: 1%;"></i>
+    </a>
+    <a href="/prediction/everything">
+        <i class="fas fa-home" style="color: white;font-size: 2rem;position: absolute;top: 20%;left: 1%;"></i>
+    </a>
+    <div id="mainframe" style="color:white ;justify-content: space-around;align-items: center;border: white solid 2px; height: 83.5vh; width: 100%; display: flex;">
+        <div id="Log_in">
+            <h1>Log in</h1>
+            <form id="login_form" method="POST" action="/auth/check_account">
+                <div class="form_div" style="top:37%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="email" class="form_input" placeholder=" ">
+                    <label class="form_label">Email</label>
+                </div>
+                <div class="form_div" style="top:50%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="password" class="form_input" placeholder=" ">
+                    <label class="form_label">password</label>
+                </div>
+                <input type="submit" class="form_submit" value="Log in">                
+            </form>
+
+        </div>
+        <div style="width: 1px;background-color: white;height: 100%;"></div>
+        <div id="register">
+            <h1>Register</h1>
+            <form method="POST" action="/auth/create_account">
+                <div class="form_div" style="top:35%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="email" class="form_input" placeholder=" ">
+                    <label class="form_label">Email</label>
+                </div>
+                <div class="form_div" style="top:45%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="email" class="form_input" placeholder=" ">
+                    <label class="form_label">Account User Name</label>
+                </div>
+                <div class="form_div" style="top:55%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="email" class="form_input no_pointer" placeholder=" " readonly id="organisation_input">
+                    <label class="form_label">Name of organisation</label>
+                </div>
+                <div class="form_div" style="top:65%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="password" class="form_input" placeholder=" ">
+                    <label class="form_label">Password</label>
+                </div>
+                <div class="form_div" style="top:75%;position: absolute;height: 6%;width: 30%;height: 48px;margin-bottom: 1.5rem;">
+                    <input type="password" class="form_input" placeholder=" ">
+                    <label class="form_label">Confirm Password</label>
+                </div>
+                Type of account:
+                <input type="radio" id="account_type1" value="1", name="account_type" required>
+                <label for="account_type1" id="label_account1">Personal</label>
+                <input type="radio" id="account_type2" value="2", name="account_type">
+                <label for="account_type2" id="label_account2">Organisational</label>
+                <input type="submit" class="form_submit" value="Register" style="top: 87%; left: 46%;">
+            </form>
+        </div>
+        <script src="/js/type_of_account.js"></script>
+        <div style="width: 1px;background-color: white;height: 100%;"></div>
+        <div id="social_login">
+            <h1>Use your google account</h1>
+            <a href="/login/oauth/google/">
+                <div style="display: flex;justify-content: space-evenly;align-items: center;border-radius: 0.5rem;height: 10%; top:36%;width: 29%; text-align: unset;position: absolute; border: white 1px solid; color: white; font-size: 1.5rem;">
+                    <i class="fab fa-google"></i>
+                    <span>Sign In with Google</span>
+                </div>            
+            </a>
+            <div style="position: absolute; top: 51%; border: white 1px solid;text-align: justify; height: 22%; width: 29%; font-size: 1.5rem; left: 69%;">Note: Using this method will only allow you to make a personal account. If you want to make an organisational account, please register for one manually.</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/Home.css">
+    <link rel="stylesheet" type="text/css" href="/styles/everything.css">
+    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+    <title><%=title%></title>
+</head>
+<body>
+    <header>
+        <img src="/media/logos/only_logog.jpg">
+        <span style="color: white;">
+            <p style="font-size: 2.5rem;">Stockado</p>
+            <p style="font-size: 1.25rem;">Dont Just Invest, Stockado it.</p>
+        </span>
+    </header>
+    <a href="/">
+        <i class="fas fa-home" style="color: white;font-size: 2rem;position: absolute;top: 20%;left: 1%;"></i>
+    </a>
+    <a href="/profile">
+        <i class="fas fa-user-alt" style="color: white;font-size: 2rem;position: absolute;top: 20%;right: 1%;"></i>
+    </a>
+    <main>
+        <div class="container">
+            <h1>Predicted Stock Price</h1>
+            <br>
+            <p>Last data updated at: <%=time%>(New York Time)</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>Predicted Stock Price(in USD):</h3>
+            <br>
+            <br>
+
+            <h2 style="text-align: center;">
+                <span style="border: solid 1px white;">
+                    <%=ps[0].Predicted%>
+                </span>
+            </h2>
+            <div id="view_full_prices">
+                <a href="/prediction/prices" style="text-decoration: none; color: white;">
+                    <i class="fas fa-file-invoice"></i>
+                    <span style="font-size: 1.5rem;">
+                        View Full Stock Prediction Report
+                    </span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="seperator_line"></div>
+        <div class="container">
+            <h1>Financial Sentiment Score</h1>
+            <br>
+            <p>Last data updated at: <%=time%>(New York Time)</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>Financial Sentiment Analysis Score</h3>
+            <br>
+            <br>
+
+            <h2 style="text-align: center;">
+                <span style="border: solid 1px white;">
+                    <%=rs[0].Current%>
+                </span>
+            </h2>
+            <div id="view_full_prices" style="background-color: orange;">
+                <a href="/prediction/reviews" style="text-decoration: none; color: white;">
+                    <i class="fas fa-file-invoice"></i>
+                    <span style="font-size: 1.5rem;">
+                        View Full Sentimental Analysis
+                    </span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

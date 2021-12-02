@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/Home.css">
+    <link rel="stylesheet" type="text/css" href="/styles/prices.css">
+    <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone.js" integrity="sha512-Wce3DO5oF0CPqeOyYw2ID1WeAK32PxLO9xCZnFEmjLoJ98uLETULKQO3wG4a0+Zh7M/DJ/9yjZ6bE88mVAH7iQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone.js"></script>
+    <title><%=title%></title>
+</head>
+<body>
+    <header>
+        <img src="/media/logos/only_logog.jpg">
+        <span style="color: white;">
+            <p style="font-size: 2.5rem;">Stockado</p>
+            <p style="font-size: 1.25rem;">Dont Just Invest, Stockado it.</p>
+        </span>
+    </header>
+    <a href="/prediction/everything">
+        <i class="fas fa-arrow-left" style="color: white;font-size: 2rem;position: absolute;top: 20%;left: 1%;z-index: 2;"></i>
+    </a>
+    <div id="graph"></div>
+    <div id="Data">
+        <%for (var i=0;i<previous.length;i+=1){%>
+            <p class="datapoints"><%=previous[i]%></p>
+        <%}%>
+        <p id="prediction1" style="display: none;"><%=ps%></p>
+        <p id="prediction2" style="display: none;"><%=psd%></p>
+    </div>
+    <script type="text/javascript">
+    var closes=[], dates=[]
+        all_data=document.getElementsByClassName('datapoints');
+        for(var i=0;i<all_data.length;i++){
+            all_data[i].innerHTML=all_data[i].innerHTML.replace(/\n/g, "")
+            curr_date=all_data[i].innerHTML.slice(58,77)
+            curr_close=all_data[i].innerHTML.slice(88,all_data[i].innerHTML.length-1)
+            closes.push(parseFloat(curr_close))
+            dates.push(curr_date)
+        }
+        predx=[],predy=[]
+        predx.push(dates[0])
+        predy.push(closes[0])
+        console.log(document.getElementById('prediction2').innerHTML)
+        predx.push(document.getElementById('prediction2').innerHTML)
+        document.getElementById('prediction1').innerText=document.getElementById('prediction1').innerText.replace(/\n/g, "")
+        predy.push(parseFloat(document.getElementById('prediction1').innerText.slice(92,109)))
+        var trace = {
+            x: dates,
+            y: closes,
+            mode:'lines+markers',
+            type:'scatter',
+            name:'Previous Prices',
+            marker:{
+                color:'white',
+                size:8
+            }
+        }
+        var predtrace = {
+            x: predx,
+            y: predy,
+            mode:'lines+markers',
+            type:'scatter',
+            name:'Predicted Prices',
+            marker:{
+                color:'orange',
+                size:8
+            }
+        }
+        var dataplot=[predtrace,trace]
+        Plotly.newPlot('graph',dataplot,layout={
+            plot_bgcolor:'#000000',paper_bgcolor:'#000000',font:{color:'#ffffff'}, xaxis:{color:'#ffffff', linewidth:'3', gridcolor:'white'} ,
+            yaxis:{
+                color:'#ffffff', 
+                linewidth:'3', 
+                gridcolor:'white', 
+                range:[Math.max(Math.min(...closes)-0.5,0), Math.max(Math.max(...closes), predy[1])+0.5]
+            }});
+    </script>
+    <p style="color: white; font-size: 1.5rem; position: absolute;top: 19%; left: 40%;">Company: Microsoft</p>
+    <span style="color: white; position: absolute; top: 38%;left: 90%;">Predicted Value: <span style="font-size: 1.5rem; border: 1px solid white;"><%=ps[0].Predicted.toFixed(4)%>$</span></span>
+    <h2 style="color: white">Instructions:</h2>
+    <br>
+    <p style="color: white">
+        <ol style="color: white; font-size: 1.25rem;">
+            <li style="color: white">The predicted value will be updated every 15 minutes.</li>
+            <br>
+            <li style="color: white">The predictor is not able to detect sudden changes, however it is very accurate for long term investmemts</li>
+            <br>
+            <l1 style="color: white">We will publish the new predicted value after every 15 minutes. The prediction will be for next 12-13 minutes. During this time, you can perform the buy and sales of the stocks.</l1>
+        </ol>
+    </p>
+    </body>
+</html>

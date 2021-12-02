@@ -1,0 +1,35 @@
+main{
+    height: 83.7198vh;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 4%;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    width: 40%;
+    color: white;
+    padding-top: 3%;
+    height: 93%;
+}
+.container h1{
+    text-align: center;
+}
+.seperator_line{
+    border: 1px solid white;
+    width: 1px;
+    height: 93%;
+}
+#view_full_prices{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 19%;
+    width: 100%;
+    align-items: center;
+    height: 11%;
+    font-size: 1.5rem;
+    background-color: green;
+    border-radius: 1.5rem;
+}

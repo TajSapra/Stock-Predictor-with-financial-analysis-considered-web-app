@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/Profile.css">
+    <title><%=title%></title>
+</head>
+<body>
+    <header>
+        <img src="/media/logos/only_logog.jpg">
+        <span style="color: white;">
+            <p style="font-size: 2.5rem;">Stockado</p>
+            <p style="font-size: 1.25rem;">Dont Just Invest, Stockado it.</p>
+        </span>
+    </header>
+    <a href="/">
+        <i class="fas fa-home" style="color: white;font-size: 2rem;position: absolute;top: 20%;left: 1%;"></i>
+    </a>
+    <main>
+        <section class="glass" style="display: flex; justify-content: center; color: white;">
+            <div class="profile" style="font-size: 1.75rem; text-align: center;">
+                <h1 style="position: relative; top: 10%;">Account Information</h1>
+                <div class="profile-info" style="position: relative; top: 30%;">
+                    <p>Name: <%=user.name_of_account_holder%></p>
+                    <p>Email: <%=user.email%></p>
+                    <p>
+                        Type of Account: <%if(user.account_type==1){%>
+                            Personal
+                        <%}else{%>
+                            Organizational
+                        <%}%>
+                    </p>
+                </div>
+                <div id="view_full_prices">
+                    <a href="/prediction/everything" style="text-decoration: none; color: white;">
+                        <span style="font-size: 1.75rem;">
+                            Go to the Prediction Page
+                        </span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div id="view_full_prices2">
+                    <a href="/auth/logout" style="text-decoration: none; color: white;">
+                        <i class="fas fa-arrow-left"></i>
+                        <span style="font-size: 1.75rem;">
+                            Logout
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+</body>
+</html>

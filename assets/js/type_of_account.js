@@ -1,0 +1,40 @@
+document.getElementById('account_type2').addEventListener('click',function(){
+    if(document.getElementById('account_type2').checked){
+        document.getElementById('organisation_input').readOnly=false
+        document.getElementById('organisation_input').classList.remove("no_pointer")
+    }
+    else{
+        document.getElementById('organisation_input').readOnly=true
+        document.getElementById('organisation_input').classList.add("no_pointer")
+    }
+})
+document.getElementById('account_type1').addEventListener('click',function(){
+    if(document.getElementById('account_type2').checked){
+        document.getElementById('organisation_input').readOnly=false
+        document.getElementById('organisation_input').classList.remove("no_pointer")
+    }
+    else{
+        document.getElementById('organisation_input').readOnly=true
+        document.getElementById('organisation_input').classList.add("no_pointer")
+    }
+})
+document.getElementById('label_account1').addEventListener('click',function(){
+    if(document.getElementById('account_type2').checked){
+        document.getElementById('organisation_input').readOnly=false
+        document.getElementById('organisation_input').classList.remove("no_pointer")
+    }
+    else{
+        document.getElementById('organisation_input').readOnly=true
+        document.getElementById('organisation_input').classList.add("no_pointer")
+    }
+})
+document.getElementById('label_account2').addEventListener('click',function(){
+    if(document.getElementById('account_type2').checked){
+        document.getElementById('organisation_input').readOnly=false
+        document.getElementById('organisation_input').classList.remove("no_pointer")
+    }
+    else{
+        document.getElementById('organisation_input').readOnly=true
+        document.getElementById('organisation_input').classList.add("no_pointer")
+    }
+})

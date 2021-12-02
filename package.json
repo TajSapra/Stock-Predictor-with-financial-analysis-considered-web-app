@@ -1,0 +1,47 @@
+{
+  "name": "stockado",
+  "version": "1.0.0",
+  "description": "Task:\r To make a stock Predictor web app using Machine Learning and nodeJS. Stock predictor with financial analysis web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TajSapra/Stock-Predictor-with-financial-analysis-considered-web-app.git"
+  },
+  "author": "Taj Sapra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TajSapra/Stock-Predictor-with-financial-analysis-considered-web-app/issues"
+  },
+  "homepage": "https://github.com/TajSapra/Stock-Predictor-with-financial-analysis-considered-web-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "child_process": "^1.0.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.5.0",
+    "console": "^0.7.2",
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.1",
+    "needle": "^2.9.0",
+    "newsapi": "^2.4.1",
+    "node-schedule": "^2.0.0",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "path": "^0.12.7",
+    "process": "^0.11.10",
+    "python": "0.0.4",
+    "python-shell": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
